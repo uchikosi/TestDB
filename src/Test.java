@@ -3,6 +3,7 @@ public class Test {
 		TestUserDAO dao = new TestUserDAO();
 		dao.select("taro", "123");
 		dao.selectAll();
+//		allなのですべて取得する
 		dao.selectByName("taro");
 		dao.selectByPassword("123");
 		dao.updateUserNameByUserName("taro", "saburo");
