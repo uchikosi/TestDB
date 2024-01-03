@@ -121,7 +121,7 @@ public class TestUserDAO {
 		}
 	}
 //	テーブルから指定されたパスワードに一致する行を取得する。
-//	willをしているが今回はセレクトしたもののみ取得してるためps.setString(1, name);の
+//	willをしているが今回はセレクトしたもののみ取得してる
 //	user_name、paswordカラムの値のみ表示される
 
 	public void updateUserNameByUserName(String oldName,String newName) {
@@ -192,6 +192,8 @@ public class TestUserDAO {
 			int i=ps.executeUpdate();
 			if (i>0) {
 				System.out.println(i + "件削除されました");
+			}else{
+				System.out.println("該当する削除データはありませんでした");
 			}
 		}
 		catch (SQLException e ) {
@@ -205,7 +207,9 @@ public class TestUserDAO {
 		}
 	}
 }
-
+//user_nameに一致するデータを test_table テーブルから削除するためのメソッド
+//ifでexecuteUpdate メソッドは、実行された削除により影響を受けた行の数を返します。
+//この値が1より大きい場合は、指定されたユーザー名に一致する行が存在し、ユーザー名が削除され、新たに登録された件数が表示される。
 
 //DAOは「DataAccessObject（データアクセスオブジェクト）」、データベースや永続化されたデータへのアクセスを提供するためのオブジェクト指向のパターンです。
 //DAOの流れについては基本的に決まっています。
