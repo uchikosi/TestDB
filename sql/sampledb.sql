@@ -1,6 +1,7 @@
 drop database if exists sampledb;
 create database sampledb;
 use sampledb;
+
 create table sample_table (
    No int,
    name varchar(50),
